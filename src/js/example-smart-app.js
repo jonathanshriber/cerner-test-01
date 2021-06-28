@@ -93,7 +93,7 @@
     function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {
 
-        var appt = smart.api.create(dummyAppointment(), {});
+        var appt = smart.patient.api.create(dummyAppointment(), {});
 
         $.when(appt).done(function(data) {
 
@@ -173,15 +173,19 @@
           }
       ],
       "status": "booked",
-      "serviceCategory": {
-          "coding": [
-              {
-                  "system": "http://example.org/service-category",
-                  "code": "gp",
-                  "display": "General Practice"
-              }
-          ]
-      },
+      "serviceType": [
+         {
+           "coding": [
+             {
+               "system": "http://snomed.info/sct",
+               "code": "408443003",
+               "display": "General medical practice",
+               "userSelected": false
+             }
+           ],
+           "text": "General medical practice"
+         }
+       ],
       "specialty": [
           {
               "coding": [
