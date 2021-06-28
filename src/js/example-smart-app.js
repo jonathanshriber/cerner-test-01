@@ -96,7 +96,7 @@
         
         var patient = smart.patient;
         var pt = patient.read();
-        var appt = smart.api.create(dummyAppointment());
+        var appt = smart.api.create(dummyAppointment(), {});
 
         $.when(appt).done(function(appt) {
 
