@@ -155,92 +155,47 @@
 
   function dummyAppointment()
   {
-    return `{
+    return {
       "resourceType": "Appointment",
-      "id": "JLS123456789",
-      "meta": {
-          "versionId": "1",
-          "lastUpdated": "2021-06-28T11:00:00.000-05:00"
-      },
-      "text": {
-          "status": "generated",
-          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Brian MRI results discussion</div>"
-      },
-      "identifier": [
-          {
-              "system": "http://example.org/sampleappointment-identifier",
-              "value": "123"
-          }
-      ],
-      "status": "booked",
+      "status": "proposed",
       "serviceType": [
-         {
-           "coding": [
-             {
-               "system": "http://snomed.info/sct",
-               "code": "408443003",
-               "display": "General medical practice",
-               "userSelected": false
-             }
-           ],
-           "text": "General medical practice"
-         }
-       ],
-      "specialty": [
-          {
-              "coding": [
-                  {
-                      "system": "http://snomed.info/sct",
-                      "code": "394814009",
-                      "display": "General practice"
-                  }
-              ]
-          }
-      ],
-      "appointmentType": {
+        {
           "coding": [
-              {
-                  "system": "http://terminology.hl7.org/CodeSystem/v2-0276",
-                  "code": "WALKIN",
-                  "display": "A previously unscheduled walk-in visit"
-              }
+            {
+              "code": "408443003",
+              "system": "http://snomed.info/sct"
+            }
           ]
-      },
-      "priority": 5,
-      "description": "Discussion on the results of your recent MRI",
-      "minutesDuration": 15,
-      "slot": [
-          {
-              "reference": "Slot/2571940427-21304876-63509403-60"
-          }
+        }
       ],
-      "created": "2021-06-28T11:00:00.000-05:00",
-      "comment": "Further expand on the results of the MRI and determine the next actions that may be appropriate.",
+      "reasonCode": [
+        {
+          "text": "I have a cramp"
+        }
+      ],
+      "comment": "Appointment request comment",
       "participant": [
-          {
-              "actor": {
-                  "reference": "Patient/12724065",
-                  "display": "SMART, Wilma"
-              },
-              "required": "required",
-              "status": "accepted"
+        {
+          "actor": {
+            "reference": "Patient/12724065"
           },
-          {
-              "actor": {
-                  "reference": "Location/235852",
-                  "display": "Sanford Health East Dickinson Clinic"
-              },
-              "required": "required",
-              "status": "accepted"
-          }
+          "status": "needs-action"
+        },
+        {
+          "actor": {
+            "reference": "Location/21304876",
+            "display": "MX Clinic 1"
+          },
+          "status": "needs-action"
+        }
       ],
       "requestedPeriod": [
-          {
-              "start": "2021-07-05T14:00:00Z",
-              "end": "2021-07-05T14:00:00Z"
-          }
+        {
+          "start": "2020-02-07T13:28:17-05:00",
+          "end": "2021-02-07T13:28:17-05:00"
+        }
       ]
-  }`;
+    };
   }
 
   window.drawVisualization = function(p) {
