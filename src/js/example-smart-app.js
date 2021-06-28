@@ -92,15 +92,12 @@
 
     function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {
-        var appt = dummyAppointment();
-        
-        var patient = smart.patient;
-        var pt = patient.read();
+
         var appt = smart.api.create(dummyAppointment(), {});
 
-        $.when(appt).done(function(appt) {
+        $.when(appt).done(function(data) {
 
-          console.log(appt);
+          console.log(data);
 
           ret.resolve(p);
         });
@@ -210,7 +207,7 @@
       "minutesDuration": 15,
       "slot": [
           {
-              "reference": "Slot/235858"
+              "reference": "Slot/2571940427-21304876-63509403-60"
           }
       ],
       "created": "2021-06-28T11:00:00.000-05:00",
@@ -218,23 +215,9 @@
       "participant": [
           {
               "actor": {
-                  "reference": "Patient/12688011",
-                  "display": "MXDTEST, WHSCRIPTJENAMB"
+                  "reference": "Patient/12724065",
+                  "display": "SMART, Wilma"
               },
-              "required": "required",
-              "status": "accepted"
-          },
-          {
-              "type": [
-                  {
-                      "coding": [
-                          {
-                              "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-                              "code": "ATND"
-                          }
-                      ]
-                  }
-              ],
               "required": "required",
               "status": "accepted"
           },
@@ -249,8 +232,8 @@
       ],
       "requestedPeriod": [
           {
-              "start": "2021-07-01T09:00:00.000Z",
-              "end": "2021-07-01T09:30:00.000Z"
+              "start": "2021-07-05T14:00:00Z",
+              "end": "2021-07-05T14:00:00Z"
           }
       ]
   }`;
