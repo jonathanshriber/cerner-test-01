@@ -100,7 +100,8 @@
           console.log(data);
 
           ret.resolve(p);
-        });
+        }).fail(onError);
+
       } else {
         onError();
       }
