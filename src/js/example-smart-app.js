@@ -93,7 +93,7 @@
     function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {
 
-        var appt = smart.patient.api.create(dummyAppointment(), {});
+        var appt = smart.patient.api.create({resource: dummyAppointment()}, {});
 
         $.when(appt).done(function(data) {
 
