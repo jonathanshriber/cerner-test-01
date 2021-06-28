@@ -67,7 +67,7 @@
       </table>
     </div>
     <hr>
-    <div id="jls">
+    <div id="appointmentTest">
       <h2>Example-SMART-App</h2>
     </div>
     <!-- Required JS files to enable this page to embed within an MPage -->
@@ -100,19 +100,6 @@
           $('#errors').html('<p> Failed to call FHIR Service </p>');
         }
       );
-    </script>
-
-    <script>
-      $('#jls').html("<b>I am some dynamic HTML</b>");
-
-      const client = FHIR.client("https://fhir-ehr-code.cerner.com/dstu2/ec2458f2-1e24-41c8-b71b-0e701af7583d");
-
-      //https://fhir-open.cerner.com/r4/ec2458f2-1e24-41c8-b71b-0e701af7583d/Schedule?_id=24477854-21304876-62852027-0&_format=json
-
-      client.request("Schedule?_id=24477854-21304876-62852027-0").then(console.log).catch(console.error);
-
-
-
     </script>
   </body>
 </html>
